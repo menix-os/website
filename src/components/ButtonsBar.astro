@@ -1,0 +1,22 @@
+---
+import Button from "./Button.astro";
+import NavLink from "./NavLink.astro";
+
+const links = [
+    { text: "Downloads", href: "/" },
+    { text: "Docs", href: "/docs" },
+    { text: "Code", href: "/code" },
+];
+---
+
+<ul class="flex gap-5 align-center items-center">
+    {
+        links.map((link) => (
+            <li>
+                <NavLink href={link.href}>
+                    <span>{link.text}</span>
+                </NavLink>
+            </li>
+        ))
+    }
+</ul>

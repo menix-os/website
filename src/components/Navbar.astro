@@ -1,0 +1,19 @@
+---
+import Logo from "../assets/logo.svg";
+import ButtonsBar from "./ButtonsBar.astro";
+---
+
+<div class="wrapper dark:bg-zinc-900 bg-stone-200">
+    <header class="flex p-5 gap-5 w-3/4 mx-auto justify-between">
+        <div class="flex items-center gap-5">
+            <Logo width={56} />
+
+            <h1 class="text-2xl flex font-glitch">
+                The <span class="text-mred-600 ml-1 mr-1">Menix</span> Operating
+                System
+            </h1>
+        </div>
+
+        <ButtonsBar />
+    </header>
+</div>
