@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import SvgLogo from "../../assets/logo.svg";
+import Gear from "../../assets/menix-gear.svg";
+---
+
+<h1>Test</h1>
+
+<div class="bg">
+    <div class="gear">
+        <Gear width={660} height={660} />
+    </div>
+
+    <div class="gear gear2">
+        <Gear width={660} height={660} />
+    </div>
+
+    <div class="boder-container"></div>
+</div>
+
+<style>
+    .bg {
+        position: relative;
+        width: 510px;
+        height: 510px;
+        background: #1b0300;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .boder-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 510px;
+        height: 510px;
+        background: none;
+        border: 30px solid red;
+    }
+
+    .gear {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        transform: translateX(-50%) translateY(-50%);
+        animation: fakt 10s infinite linear;
+    }
+
+    .gear2 {
+        top: 470px;
+        left: 470px;
+        animation: fakt 10s infinite reverse linear;
+    }
+
+    @keyframes fakt {
+        0% {
+            transform: translateX(-50%) translateY(-50%) rotate(-7deg);
+        }
+        100% {
+            transform: translateX(-50%) translateY(-50%) rotate(353deg);
+        }
+    }
+</style>
