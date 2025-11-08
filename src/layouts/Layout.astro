@@ -1,6 +1,18 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
+
+interface Props {
+	meta: {
+		default: boolean;
+		description?: string;
+	};
+}
+
+const { meta } = Astro.props;
+
+const description =
+	(meta.default ? "The Menix Operating System" : "") + meta.description;
 ---
 
 <!doctype html>
@@ -10,10 +22,11 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
 		<title>Menix operating system</title>
 	</head>
 	<body
-		class="dark:bg-zinc-950 bg-zinc-50 text-gray-900 dark:text-gray-50 font-scp"
+		class="dark:bg-zinc-950 bg-zinc-50 text-gray-900 dark:text-gray-50 font-rubik"
 	>
 		<Navbar />
 		<slot />
