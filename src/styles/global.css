@@ -32,9 +32,17 @@
     src: url("/fonts/Rubik-Bold.ttf");
 }
 
+
+@font-face {
+    font-family: source-code-pro;
+    font-weight: 700;
+    src: url("/fonts/SourceCodePro-Bold.ttf");
+}
+
 @theme {
     --font-glitch: rubik-glitch-regular, sans-serif;
     --font-rubik: rubik, monospace;
+    --font-scp: source-code-pro, sans-serif
 
     /* base color from menix logo #FF1A00 */
     --color-mred-50: #fff2ec;
