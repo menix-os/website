@@ -25,25 +25,37 @@ const links = [
 ---
 
 <footer
-    class="dark:bg-zinc-900 bg-stone-900 px-10 py-20 relative overflow-hidden dark:text-stone-300 text-stone-300"
+    class="dark:bg-zinc-900 bg-stone-900 px-10 py-20 relative overflow-hidden text-stone-300"
 >
-    <div class="gear z-1">
+    <div class="gear gear1 z-1">
+        <MenixGear height={600} width={600} />
+    </div>
+
+    <div class="gear gear2 z-1">
         <MenixGear height={600} width={600} />
     </div>
 
     <div class="w-3/4 mx-auto z-2 flex flex-col gap-10">
-        <ul class="flex flex-col gap-2">
-            {
-                links.map((link) => (
-                    <li class="hover:underline flex items-center gap-1">
-                        <link.icon width={20} height={20} />
-                        <a target="_blank" href={link.href}>
-                            {link.text}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
+        <div class="flex justify-between items-end z-10">
+            <ul class="flex flex-col gap-2 w-min">
+                {
+                    links.map((link) => (
+                        <li class="hover:underline flex items-center gap-1">
+                            <link.icon width={20} height={20} />
+                            <a target="_blank" href={link.href}>
+                                {link.text}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <div>
+                <span
+                    >The Menix project was created without the use of generative
+                    AI</span
+                >
+            </div>
+        </div>
         <div class="flex items-center gap-3">
             <MenixAnimatedLogo scale={0.08} />
             <span class="text-lg">The Menix Project</span>
@@ -54,9 +66,17 @@ const links = [
 <style>
     .gear {
         position: absolute;
-        right: -130px;
-        bottom: -358px;
         filter: brightness(0) saturate(100%) invert(10%) sepia(6%)
             saturate(711%) hue-rotate(202deg) brightness(95%) contrast(87%);
+    }
+
+    .gear1 {
+        right: -130px;
+        bottom: -358px;
+    }
+
+    .gear2 {
+        top: -300px;
+        left: -250px;
     }
 </style>
