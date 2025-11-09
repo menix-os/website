@@ -2,18 +2,31 @@
 import { Image } from "astro:assets";
 import HeroImage from "../assets/menix-in-qemu-cropped.png";
 import Button from "./reusable/Button.astro";
+import MenixGear from "../assets/menix-gear.svg";
+
+const gearSize = 350;
 ---
+
+<div class="gear1 gear">
+    <MenixGear width={gearSize} height={gearSize} />
+</div>
+
+<div class="gear2 gear">
+    <MenixGear width={gearSize} height={gearSize} />
+</div>
 
 <section class="flex overflow-hidden mt-15 ml-10 items-center">
     <div class="flex-1 text-4xl">
-        <div class="w-3/4 mx-auto pb-30">
-            <h2 class="leading-13 max-w-2xl font-semibold">
-                A modular 64-bit kernel written in Rust with a familiar,
-                POSIX-like interface
-            </h2>
+        <div class="pb-10 pl-50 flex flex-col items-center">
+            <div class="flex flex-col">
+                <h2 class="leading-13 max-w-2xl font-semibold">
+                    A modular 64-bit kernel written in Rust with a familiar
+                    POSIX-like interface
+                </h2>
 
-            <div class="mt-7">
-                <Button> Quick Start </Button>
+                <div class="mt-7">
+                    <Button> Quick Start </Button>
+                </div>
             </div>
         </div>
     </div>
@@ -24,3 +37,35 @@ import Button from "./reusable/Button.astro";
         loading={"eager"}
     />
 </section>
+
+<style>
+    .gear {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+
+    .gear1 {
+        top: -90px;
+        left: 50px;
+        animation: spinning infinite 10s linear;
+    }
+
+    .gear2 {
+        top: 145px;
+        left: -180px;
+        rotate: 13deg;
+        animation: spinning infinite 10s linear reverse;
+    }
+
+    @keyframes spinning {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
