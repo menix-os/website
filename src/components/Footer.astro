@@ -1,0 +1,62 @@
+---
+import MenixGear from "../assets/menix-gear.svg";
+import MenixAnimatedLogo from "./reusable/MenixAnimatedLogo.astro";
+import Factory from "../assets/factory.svg";
+import GhLogo from "../assets/github-logo.svg";
+import Download from "../assets/download.svg";
+
+const links = [
+    {
+        icon: Download,
+        text: "Downloads",
+        href: "https://download.menix-os.org",
+    },
+    {
+        icon: Factory,
+        text: "Buildbot",
+        href: "https://build.menix-os.org/",
+    },
+    {
+        icon: GhLogo,
+        text: "Github org",
+        href: "https://github.com/menix-os",
+    },
+];
+---
+
+<footer
+    class="dark:bg-zinc-900 bg-stone-900 px-10 py-20 relative overflow-hidden dark:text-stone-300 text-stone-300"
+>
+    <div class="gear z-1">
+        <MenixGear height={600} width={600} />
+    </div>
+
+    <div class="w-3/4 mx-auto z-2 flex flex-col gap-10">
+        <ul class="flex flex-col gap-2">
+            {
+                links.map((link) => (
+                    <li class="hover:underline flex items-center gap-1">
+                        <link.icon width={20} height={20} />
+                        <a target="_blank" href={link.href}>
+                            {link.text}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <div class="flex items-center gap-3">
+            <MenixAnimatedLogo scale={0.08} />
+            <span class="text-lg">The Menix Project</span>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .gear {
+        position: absolute;
+        right: -130px;
+        bottom: -358px;
+        filter: brightness(0) saturate(100%) invert(10%) sepia(6%)
+            saturate(711%) hue-rotate(202deg) brightness(95%) contrast(87%);
+    }
+</style>
