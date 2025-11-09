@@ -1,12 +1,13 @@
 ---
 import Logo from "../assets/logo.svg";
 import ButtonsBar from "./ButtonsBar.astro";
+import MenixAnimatedLogo from "./reusable/MenixAnimatedLogo.astro";
 ---
 
 <div class="wrapper dark:bg-zinc-900 bg-stone-900 text-zinc-50">
     <header class="flex p-5 gap-5 w-3/4 mx-auto justify-between">
         <div class="flex items-center gap-5">
-            <Logo width={56} />
+            <MenixAnimatedLogo scale={0.12} />
 
             <h1 class="text-2xl font-bold">
                 The <span class="text-mred-600">Menix</span> Operating System

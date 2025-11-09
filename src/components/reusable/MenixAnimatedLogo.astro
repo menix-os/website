@@ -2,27 +2,31 @@
 import { Image } from "astro:assets";
 import SvgLogo from "../../assets/logo.svg";
 import Gear from "../../assets/menix-gear.svg";
----
 
-<h1>Test</h1>
+interface Props {
+    scale?: number;
+}
+
+const { scale = 1 } = Astro.props;
+---
 
 <div class="bg">
     <div class="gear">
-        <Gear width={660} height={660} />
+        <Gear width={660 * scale} height={660 * scale} />
     </div>
 
     <div class="gear gear2">
-        <Gear width={660} height={660} />
+        <Gear width={660 * scale} height={660 * scale} />
     </div>
 
     <div class="boder-container"></div>
 </div>
 
-<style>
+<style define:vars={{ scale }}>
     .bg {
         position: relative;
-        width: 510px;
-        height: 510px;
+        width: calc(510px * var(--scale));
+        height: calc(510px * var(--scale));
         background: #1b0300;
         z-index: 10;
         overflow: hidden;
@@ -32,23 +36,23 @@ import Gear from "../../assets/menix-gear.svg";
         position: absolute;
         top: 0;
         left: 0;
-        width: 510px;
-        height: 510px;
+        width: calc(510px * var(--scale));
+        height: calc(510px * var(--scale));
         background: none;
-        border: 30px solid red;
+        border: calc(30px * var(--scale)) solid red;
     }
 
     .gear {
         position: absolute;
-        top: 30px;
-        left: 30px;
+        top: calc(30px * var(--scale));
+        left: calc(30px * var(--scale));
         transform: translateX(-50%) translateY(-50%);
         animation: fakt 10s infinite linear;
     }
 
     .gear2 {
-        top: 470px;
-        left: 470px;
+        top: calc(470px * var(--scale));
+        left: calc(470px * var(--scale));
         animation: fakt 10s infinite reverse linear;
     }
 
