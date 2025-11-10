@@ -9,12 +9,16 @@ const { scale = 1 } = Astro.props;
 ---
 
 <div class="bg">
-    <div class="gear">
-        <Gear width={660 * scale} height={660 * scale} />
+    <div class="menix-gear">
+        <div class="rotator">
+            <Gear width={660 * scale} height={660 * scale} />
+        </div>
     </div>
 
-    <div class="gear gear2">
-        <Gear width={660 * scale} height={660 * scale} />
+    <div class="menix-gear menix-gear2">
+        <div class="rotator">
+            <Gear width={660 * scale} height={660 * scale} />
+        </div>
     </div>
 
     <div class="boder-container"></div>
@@ -26,7 +30,6 @@ const { scale = 1 } = Astro.props;
         width: calc(510px * var(--scale));
         height: calc(510px * var(--scale));
         background: #1b0300;
-        z-index: 10;
         overflow: hidden;
     }
 
@@ -36,30 +39,39 @@ const { scale = 1 } = Astro.props;
         left: 0;
         width: calc(510px * var(--scale));
         height: calc(510px * var(--scale));
-        background: none;
         border: calc(30px * var(--scale)) solid red;
     }
 
-    .gear {
+    .menix-gear {
         position: absolute;
         top: calc(30px * var(--scale));
         left: calc(30px * var(--scale));
-        transform: translateX(-50%) translateY(-50%);
-        animation: fakt 10s infinite linear;
+        transform: translate(-50%, -50%);
     }
 
-    .gear2 {
+    .menix-gear2 {
         top: calc(470px * var(--scale));
         left: calc(470px * var(--scale));
-        animation: fakt 10s infinite reverse linear;
     }
 
-    @keyframes fakt {
+    .rotator {
+        animation: spinning 10s infinite linear;
+    }
+
+    .menix-gear2 .rotator {
+        animation-direction: reverse;
+    }
+
+    .menix-gear svg {
+        display: block;
+    }
+
+    @keyframes spinning {
         0% {
-            transform: translateX(-50%) translateY(-50%) rotate(-7deg);
+            transform: rotate(-7deg);
         }
         100% {
-            transform: translateX(-50%) translateY(-50%) rotate(353deg);
+            transform: rotate(353deg);
         }
     }
 </style>
