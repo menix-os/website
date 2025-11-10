@@ -7,7 +7,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   vite: { plugins: [tailwindcss()], },
   integrations: [starlight({
-    title: "Menix - Docs",
+    title: "Menix Docs",
     customCss: [
       './src/styles/global.css',
     ],
@@ -24,6 +24,9 @@ export default defineConfig({
     editLink: {
       baseUrl: "https://github.com/menix-os/website/edit/main/"
     },
-    disable404Route: true
+    disable404Route: true,
+    components: {
+      SiteTitle: "./src/components/starlight-overrides/SiteTitle.astro"
+    }
   })],
 });
