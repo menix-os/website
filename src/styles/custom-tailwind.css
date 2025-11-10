@@ -1,8 +1,4 @@
-@layer base, starlight, theme, components, utilities;
-
-@import '@astrojs/starlight-tailwind';
-@import 'tailwindcss/theme.css' layer(theme);
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import "tailwindcss";
 
 @font-face {
     font-family: rubik-glitch-regular;
@@ -49,19 +45,22 @@
     src: url("/fonts/SourceCodePro-Regular.ttf");
 }
 
-@theme {
-    --color-accent-50: #fff2ec;
-    --color-accent-100: #ffe2d3;
-    --color-accent-200: #ff360a;
-    --color-accent-300: #ff976d;
-    --color-accent-400: #ff6032;
-    --color-accent-500: #ff360a;
-    --color-accent-600: #ff360a;
-    --color-accent-700: #cc0c02;
-    --color-accent-800: #a10c0b;
-    --color-accent-900: #820e0c;
-    --color-accent-950: #460406;
 
-    --font-sans: rubik;
-    --font-mono: source-code-pro;
+@theme {
+    --font-glitch: rubik-glitch-regular, sans-serif;
+    --font-rubik: rubik, monospace;
+    --font-scp: source-code-pro, sans-serif;
+
+    /* base color from menix logo #FF1A00 */
+    --color-mred-50: #fff2ec;
+    --color-mred-100: #ffe2d3;
+    --color-mred-200: #ffc1a5;
+    --color-mred-300: #ff976d;
+    --color-mred-400: #ff6032;
+    --color-mred-500: #ff360a;
+    --color-mred-600: #ff1a00;
+    --color-mred-700: #cc0c02;
+    --color-mred-800: #a10c0b;
+    --color-mred-900: #820e0c;
+    --color-mred-950: #460406;
 }
