@@ -12,7 +12,7 @@ export default defineConfig({
       './src/styles/global.css',
     ],
     logo: {
-      src: "./src/assets/menix.svg"
+      src: "./src/assets/logos/logo.svg"
     },
     social: [
       {
