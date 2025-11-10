@@ -3,12 +3,14 @@
 @font-face {
     font-family: rubik-glitch-regular;
     src: url("/fonts/RubikGlitch-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: rubik;
     font-weight: 400;
     src: url("/fonts/Rubik-Regular.ttf");
+    font-display: swap;
 }
 
 
@@ -16,6 +18,7 @@
     font-family: rubik;
     font-weight: 500;
     src: url("/fonts/Rubik-Medium.ttf");
+    font-display: swap;
 }
 
 
@@ -23,6 +26,7 @@
     font-family: rubik;
     font-weight: 600;
     src: url("/fonts/Rubik-SemiBold.ttf");
+    font-display: swap;
 }
 
 
@@ -30,6 +34,7 @@
     font-family: rubik;
     font-weight: 700;
     src: url("/fonts/Rubik-Bold.ttf");
+    font-display: swap;
 }
 
 
@@ -37,12 +42,14 @@
     font-family: source-code-pro;
     font-weight: 700;
     src: url("/fonts/SourceCodePro-Bold.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: source-code-pro;
     font-weight: 500;
     src: url("/fonts/SourceCodePro-Regular.ttf");
+    font-display: swap;
 }
 
 

@@ -8,9 +8,10 @@ interface Props {
 		default: boolean;
 		description?: string;
 	};
+	navbar?: boolean;
 }
 
-const { meta } = Astro.props;
+const { meta, navbar = true } = Astro.props;
 
 const description =
 	(meta.default ? "The Menix Operating System" : "") + meta.description;
@@ -30,7 +31,7 @@ const description =
 		class="dark:bg-zinc-950 bg-zinc-50 text-gray-900 dark:text-gray-50 font-rubik"
 	>
 		<div class="min-h-screen flex flex-col">
-			<Navbar />
+			{navbar && <Navbar />}
 			<slot />
 		</div>
 		<Footer />
