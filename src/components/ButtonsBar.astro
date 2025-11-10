@@ -3,7 +3,7 @@ import NavLink from "./reusable/NavLink.astro";
 import GithubLogo from "../assets/icons/github-logo.svg";
 
 const links = [
-    { text: "Downloads", href: "/" },
+    { text: "Downloads", href: "https://download.menix-os.org", newtab: true },
     { text: "Docs", href: "/docs" },
 ];
 ---
@@ -12,7 +12,7 @@ const links = [
     {
         links.map((link) => (
             <li>
-                <NavLink href={link.href}>
+                <NavLink newtab={link.newtab} href={link.href}>
                     <span>{link.text}</span>
                 </NavLink>
             </li>
