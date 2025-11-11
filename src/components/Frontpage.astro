@@ -7,19 +7,21 @@ import MenixGear from "../assets/logos/menix-gear.svg";
 const gearSize = 350;
 ---
 
-<div class="gear1 gear">
+<div class="gear1 gear hidden xl:block">
     <MenixGear width={gearSize} height={gearSize} />
 </div>
 
-<div class="gear2 gear">
+<div class="gear2 gear hidden xl:block">
     <MenixGear width={gearSize} height={gearSize} />
 </div>
 
-<section class="flex overflow-hidden mt-15 ml-10 items-center">
+<section class="flex mt-15 items-center lg:flex-row flex-col-reverse">
     <div class="flex-1 text-4xl">
-        <div class="pb-10 pl-50 flex flex-col items-center">
-            <div class="flex flex-col">
-                <h2 class="leading-13 max-w-2xl font-semibold">
+        <div class="pb-10 xl:pl-50 px-5 flex items-center pt-20 lg:pt-0">
+            <div class="flex flex-col items-center xl:items-start">
+                <h2
+                    class="leading-13 max-w-2xl font-semibold text-center xl:text-left"
+                >
                     Modular 64-bit kernel written in Rust with a familiar
                     POSIX-like interface
                 </h2>
@@ -30,12 +32,14 @@ const gearSize = 350;
             </div>
         </div>
     </div>
-    <Image
-        src={HeroImage}
-        alt="screenhsot of menix running in qemu"
-        height={650}
-        loading={"eager"}
-    />
+    <div class="">
+        <Image
+            src={HeroImage}
+            alt="screenhsot of menix running in qemu"
+            height={650}
+            loading={"eager"}
+        />
+    </div>
 </section>
 
 <style>

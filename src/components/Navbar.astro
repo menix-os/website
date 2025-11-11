@@ -4,12 +4,16 @@ import MenixAnimatedLogo from "./reusable/MenixAnimatedLogo.astro";
 ---
 
 <div class="wrapper dark:bg-zinc-900 bg-stone-900 text-zinc-50">
-    <header class="flex p-5 gap-5 w-3/4 mx-auto justify-between">
-        <a href="/" class="flex items-center gap-5">
+    <header class="flex p-5 gap-5 sm:w-5/6 w-full mx-auto justify-between">
+        <a href="/" class="flex items-center gap-0 sm:gap-5">
             <MenixAnimatedLogo scale={0.12} />
 
-            <h1 class="text-2xl font-bold">
-                The <span class="text-mred-600">Menix</span> Operating System
+            <h1 class="text-2xl font-bold flex">
+                <span class="hidden lg:block">The </span>
+                <span class="text-current lg:text-mred-600 hidden sm:block"
+                    >Menix</span
+                >
+                <span class="hidden lg:block"> Operating System</span>
             </h1>
         </a>
 

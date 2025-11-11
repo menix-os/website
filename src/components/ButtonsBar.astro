@@ -5,26 +5,28 @@ import GithubLogo from "../assets/icons/github-logo.svg";
 const links = [
     { text: "Downloads", href: "https://download.menix-os.org", newtab: true },
     { text: "Docs", href: "/docs" },
+    {
+        text: "Code",
+        href: "https://github.com/menix-os/menix",
+        logo: GithubLogo,
+        newtab: true,
+    },
 ];
 ---
 
 <ul class="flex gap-5 items-center">
     {
         links.map((link) => (
-            <li>
+            <li class="flex">
                 <NavLink newtab={link.newtab} href={link.href}>
-                    <span>{link.text}</span>
+                    <div class="flex gap-2 items-center">
+                        <span>{link.text}</span>
+                        <div class="hidden sm:block">
+                            {link.logo && <link.logo width={22} height={22} />}
+                        </div>
+                    </div>
                 </NavLink>
             </li>
         ))
     }
-
-    <li class="flex">
-        <NavLink href="https://github.com/menix-os/menix/" newtab={true}>
-            <div class="flex items-center gap-3">
-                <span class="">Code</span>
-                <GithubLogo width={24} height={24} />
-            </div>
-        </NavLink>
-    </li>
 </ul>
