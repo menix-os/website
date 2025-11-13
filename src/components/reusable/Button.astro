@@ -1,14 +1,14 @@
 ---
 interface Props {
-    href?: string;
+	href?: string;
 }
 
 const { href } = Astro.props;
 ---
 
 <a
-    class="bg-mred-700 px-5 py-2 rounded text-xl font-sans font-bold text-white dark:text-stone-200 cursor-pointer"
-    href={href}
+	class="bg-mred-700 px-5 py-2 rounded text-xl font-sans font-bold text-white dark:text-stone-200 cursor-pointer"
+	href={href}
 >
-    <slot />
+	<slot />
 </a>

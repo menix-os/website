@@ -2,76 +2,76 @@
 import Gear from "../../assets/logos/menix-gear.svg";
 
 interface Props {
-    scale?: number;
+	scale?: number;
 }
 
 const { scale = 1 } = Astro.props;
 ---
 
 <div class="bg">
-    <div class="menix-gear">
-        <div class="rotator">
-            <Gear width={660 * scale} height={660 * scale} />
-        </div>
-    </div>
+	<div class="menix-gear">
+		<div class="rotator">
+			<Gear width={660 * scale} height={660 * scale} />
+		</div>
+	</div>
 
-    <div class="menix-gear menix-gear2">
-        <div class="rotator">
-            <Gear width={660 * scale} height={660 * scale} />
-        </div>
-    </div>
+	<div class="menix-gear menix-gear2">
+		<div class="rotator">
+			<Gear width={660 * scale} height={660 * scale} />
+		</div>
+	</div>
 
-    <div class="boder-container"></div>
+	<div class="boder-container"></div>
 </div>
 
 <style define:vars={{ scale }}>
-    .bg {
-        position: relative;
-        width: calc(510px * var(--scale));
-        height: calc(510px * var(--scale));
-        background: #1b0300;
-        overflow: hidden;
-    }
+	.bg {
+		position: relative;
+		width: calc(510px * var(--scale));
+		height: calc(510px * var(--scale));
+		background: #1b0300;
+		overflow: hidden;
+	}
 
-    .boder-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(510px * var(--scale));
-        height: calc(510px * var(--scale));
-        border: calc(30px * var(--scale)) solid red;
-    }
+	.boder-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(510px * var(--scale));
+		height: calc(510px * var(--scale));
+		border: calc(30px * var(--scale)) solid red;
+	}
 
-    .menix-gear {
-        position: absolute;
-        top: calc(30px * var(--scale));
-        left: calc(30px * var(--scale));
-        transform: translate(-50%, -50%);
-    }
+	.menix-gear {
+		position: absolute;
+		top: calc(30px * var(--scale));
+		left: calc(30px * var(--scale));
+		transform: translate(-50%, -50%);
+	}
 
-    .menix-gear2 {
-        top: calc(470px * var(--scale));
-        left: calc(470px * var(--scale));
-    }
+	.menix-gear2 {
+		top: calc(470px * var(--scale));
+		left: calc(470px * var(--scale));
+	}
 
-    .rotator {
-        animation: spinning 10s infinite linear;
-    }
+	.rotator {
+		animation: spinning 10s infinite linear;
+	}
 
-    .menix-gear2 .rotator {
-        animation-direction: reverse;
-    }
+	.menix-gear2 .rotator {
+		animation-direction: reverse;
+	}
 
-    .menix-gear svg {
-        display: block;
-    }
+	.menix-gear svg {
+		display: block;
+	}
 
-    @keyframes spinning {
-        0% {
-            transform: rotate(-7deg);
-        }
-        100% {
-            transform: rotate(353deg);
-        }
-    }
+	@keyframes spinning {
+		0% {
+			transform: rotate(-7deg);
+		}
+		100% {
+			transform: rotate(353deg);
+		}
+	}
 </style>

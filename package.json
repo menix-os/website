@@ -1,18 +1,23 @@
 {
-  "name": "menix-website",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/starlight": "^0.36.2",
-    "@astrojs/starlight-tailwind": "^4.0.2",
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.15.4",
-    "tailwindcss": "^4.1.17"
-  }
+	"name": "menix-website",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"@astrojs/starlight": "^0.36.2",
+		"@astrojs/starlight-tailwind": "^4.0.2",
+		"@tailwindcss/vite": "^4.1.17",
+		"astro": "^5.15.4",
+		"tailwindcss": "^4.1.17"
+	},
+	"devDependencies": {
+		"prettier": "3.6.2",
+		"prettier-plugin-astro": "0.14.1"
+	}
 }

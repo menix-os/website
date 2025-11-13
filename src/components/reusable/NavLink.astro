@@ -1,16 +1,16 @@
 ---
 interface Props {
-    href: string;
-    newtab?: boolean;
+	href: string;
+	newtab?: boolean;
 }
 
 const { href, newtab = false } = Astro.props;
 ---
 
 <a
-    class="dark:hover:text-mred-600 hover:text-mred-700 p-1 text-xl"
-    href={href}
-    target={newtab ? "_blank" : ""}
+	class="dark:hover:text-mred-600 hover:text-mred-700 p-1 text-xl"
+	href={href}
+	target={newtab ? "_blank" : ""}
 >
-    <slot />
+	<slot />
 </a>

@@ -1,73 +1,68 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: rubik-glitch-regular;
-    src: url("/fonts/RubikGlitch-Regular.ttf");
-    font-display: swap;
+	font-family: rubik-glitch-regular;
+	src: url("/fonts/RubikGlitch-Regular.ttf");
+	font-display: swap;
 }
 
 @font-face {
-    font-family: rubik;
-    font-weight: 400;
-    src: url("/fonts/Rubik-Regular.ttf");
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: rubik;
-    font-weight: 500;
-    src: url("/fonts/Rubik-Medium.ttf");
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: rubik;
-    font-weight: 600;
-    src: url("/fonts/Rubik-SemiBold.ttf");
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: rubik;
-    font-weight: 700;
-    src: url("/fonts/Rubik-Bold.ttf");
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: source-code-pro;
-    font-weight: 700;
-    src: url("/fonts/SourceCodePro-Bold.ttf");
-    font-display: swap;
+	font-family: rubik;
+	font-weight: 400;
+	src: url("/fonts/Rubik-Regular.ttf");
+	font-display: swap;
 }
 
 @font-face {
-    font-family: source-code-pro;
-    font-weight: 500;
-    src: url("/fonts/SourceCodePro-Regular.ttf");
-    font-display: swap;
+	font-family: rubik;
+	font-weight: 500;
+	src: url("/fonts/Rubik-Medium.ttf");
+	font-display: swap;
 }
 
+@font-face {
+	font-family: rubik;
+	font-weight: 600;
+	src: url("/fonts/Rubik-SemiBold.ttf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: rubik;
+	font-weight: 700;
+	src: url("/fonts/Rubik-Bold.ttf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: source-code-pro;
+	font-weight: 700;
+	src: url("/fonts/SourceCodePro-Bold.ttf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: source-code-pro;
+	font-weight: 500;
+	src: url("/fonts/SourceCodePro-Regular.ttf");
+	font-display: swap;
+}
 
 @theme {
-    --font-glitch: rubik-glitch-regular, sans-serif;
-    --font-rubik: rubik, monospace;
-    --font-scp: source-code-pro, sans-serif;
+	--font-glitch: rubik-glitch-regular, sans-serif;
+	--font-rubik: rubik, monospace;
+	--font-scp: source-code-pro, sans-serif;
 
-    /* base color from menix logo #FF1A00 */
-    --color-mred-50: #fff2ec;
-    --color-mred-100: #ffe2d3;
-    --color-mred-200: #ffc1a5;
-    --color-mred-300: #ff976d;
-    --color-mred-400: #ff6032;
-    --color-mred-500: #ff360a;
-    --color-mred-600: #ff1a00;
-    --color-mred-700: #cc0c02;
-    --color-mred-800: #a10c0b;
-    --color-mred-900: #820e0c;
-    --color-mred-950: #460406;
+	/* base color from menix logo #FF1A00 */
+	--color-mred-50: #fff2ec;
+	--color-mred-100: #ffe2d3;
+	--color-mred-200: #ffc1a5;
+	--color-mred-300: #ff976d;
+	--color-mred-400: #ff6032;
+	--color-mred-500: #ff360a;
+	--color-mred-600: #ff1a00;
+	--color-mred-700: #cc0c02;
+	--color-mred-800: #a10c0b;
+	--color-mred-900: #820e0c;
+	--color-mred-950: #460406;
 }

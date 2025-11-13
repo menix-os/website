@@ -8,68 +8,68 @@ const gearSize = 350;
 ---
 
 <div class="gear1 gear hidden xl:block">
-    <MenixGear width={gearSize} height={gearSize} />
+	<MenixGear width={gearSize} height={gearSize} />
 </div>
 
 <div class="gear2 gear hidden xl:block">
-    <MenixGear width={gearSize} height={gearSize} />
+	<MenixGear width={gearSize} height={gearSize} />
 </div>
 
 <section class="flex mt-15 items-center lg:flex-row flex-col-reverse">
-    <div class="flex-1 text-4xl">
-        <div class="pb-10 xl:pl-50 px-5 flex items-center pt-20 lg:pt-0">
-            <div class="flex flex-col items-center xl:items-start">
-                <h2
-                    class="leading-13 max-w-2xl font-semibold text-center xl:text-left"
-                >
-                    Modular 64-bit kernel written in Rust with a familiar
-                    POSIX-like interface
-                </h2>
+	<div class="flex-1 text-4xl">
+		<div class="pb-10 xl:pl-50 px-5 flex items-center pt-20 lg:pt-0">
+			<div class="flex flex-col items-center xl:items-start">
+				<h2
+					class="leading-13 max-w-2xl font-semibold text-center xl:text-left"
+				>
+					Modular 64-bit kernel written in Rust with a familiar
+					POSIX-like interface
+				</h2>
 
-                <div class="mt-7">
-                    <Button href="/docs">Getting Started</Button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="">
-        <Image
-            src={HeroImage}
-            alt="screenhsot of menix running in qemu"
-            height={650}
-            loading={"eager"}
-        />
-    </div>
+				<div class="mt-7">
+					<Button href="/docs">Getting Started</Button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="">
+		<Image
+			src={HeroImage}
+			alt="screenhsot of menix running in qemu"
+			height={650}
+			loading={"eager"}
+		/>
+	</div>
 </section>
 
 <style>
-    .gear {
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-    }
+	.gear {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+	}
 
-    .gear1 {
-        top: -90px;
-        left: 50px;
-        animation: spinning infinite 10s linear;
-    }
+	.gear1 {
+		top: -90px;
+		left: 50px;
+		animation: spinning infinite 10s linear;
+	}
 
-    .gear2 {
-        top: 145px;
-        left: -180px;
-        rotate: -2deg;
-        animation: spinning infinite 10s linear reverse;
-    }
+	.gear2 {
+		top: 145px;
+		left: -180px;
+		rotate: -2deg;
+		animation: spinning infinite 10s linear reverse;
+	}
 
-    @keyframes spinning {
-        0% {
-            transform: rotate(0deg);
-        }
+	@keyframes spinning {
+		0% {
+			transform: rotate(0deg);
+		}
 
-        100% {
-            transform: rotate(360deg);
-        }
-    }
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 </style>

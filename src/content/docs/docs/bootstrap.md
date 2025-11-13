@@ -51,7 +51,6 @@ The built package will be located in the `pkgs` directory.
 If you want a build of the **ENTIRE** distribution, you will need a lot of
 free disk space (>20GB) and patience.
 
-
 ## Running the ISO/image
 
 To run the ISO/image in qemu, you can use the provided make targets:

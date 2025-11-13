@@ -10,6 +10,7 @@ If you want to get a bootable image, you might want to check out
 :::
 
 ## Cloning the repository
+
 Menix has external submodules as dependencies, to initialize them either run:
 
 ```sh
@@ -25,6 +26,7 @@ git submodule update --init --recursive
 ## Building the kernel
 
 To build the kernel you will need:
+
 - cargo
 - rustc
 - clang (Used for bindgen)
@@ -34,6 +36,7 @@ Make sure you have a full nightly toolchain installed,
 including the `rust-src` component.
 
 The following commmand will build the kernel and all drivers for x86_64:
+
 ```sh
 cargo +nightly build --release --target toolchain/x86_64-kernel.json
 ```
