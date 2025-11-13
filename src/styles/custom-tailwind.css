@@ -65,4 +65,6 @@
 	--color-mred-800: #a10c0b;
 	--color-mred-900: #820e0c;
 	--color-mred-950: #460406;
+
+	--breakpoint-3xl: 2000px;
 }
