@@ -3,6 +3,12 @@ import Frontpage from "../components/Frontpage.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout meta={{ default: true }}>
+<Layout
+	meta={{
+		description: "The Menix Operating System",
+		title: "Start",
+		useDefaultSuffix: true,
+	}}
+>
 	<Frontpage />
 </Layout>
