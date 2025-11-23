@@ -1,18 +1,37 @@
 ---
-import { postInfoFromRawPosts, type BlogPostInfo } from "../scripts/blogpost";
+import { type BlogPostInfo } from "../scripts/blogpost";
 import BlogPostCard from "./BlogPostCard.astro";
 
-const allPosts = Object.values(
-	import.meta.glob("../pages/blog/*.md", { eager: true }),
-);
+interface Props {
+	posts: BlogPostInfo[];
+	maxItems?: number;
+	sort?: "date" | "dateDesc" | "default";
+}
 
-const allPostInfos = postInfoFromRawPosts(allPosts);
+let { maxItems, sort = "date", posts } = Astro.props;
+
+function sortByDate() {
+	posts.sort(function (a, b) {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
+}
+
+if (sort === "date") {
+	sortByDate();
+} else if (sort === "dateDesc") {
+	sortByDate();
+	posts.reverse();
+}
+
+if (maxItems) {
+	posts = posts.slice(0, maxItems);
+}
 ---
 
-<ul class="flex">
+<ul class="grid sm:grid-cols-2 xl:grid-cols-3 gap-10">
 	{
-		allPostInfos.map((post) => (
-			<li>
+		posts.map((post) => (
+			<li class="flex">
 				<BlogPostCard post={post} />
 			</li>
 		))

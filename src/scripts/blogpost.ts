@@ -4,21 +4,30 @@ export interface BlogPostInfo {
 	author: string;
 	url: string;
 	img?: string;
+	rawContent: string;
 }
 
 export function postInfoFromRawPosts(raw: any[]): BlogPostInfo[] {
 	return raw.map((post) => {
-		console.log(post);
-		console.log(post.rawContent);
-		console.log(post.getHeadings);
-		console.log(post.getHeadings());
-		console.log(post.rawContent());
+		const rawContent: string = post.rawContent().trim();
+
 		return {
 			author: post.frontmatter.author,
 			date: new Date(post.frontmatter.date),
 			title: post.frontmatter.title,
 			img: post.frontmatter.img,
 			url: post.url,
+			rawContent,
 		};
 	});
+}
+
+export function loadRawPosts(): any[] {
+	return Object.values(
+		import.meta.glob("../pages/blog/*.md", { eager: true }),
+	);
+}
+
+export function loadPostInfos(): BlogPostInfo[] {
+	return postInfoFromRawPosts(loadRawPosts());
 }
