@@ -3,8 +3,12 @@ import { Image } from "astro:assets";
 import HeroImage from "../assets/images/menix-in-qemu-cropped.png";
 import Button from "./reusable/Button.astro";
 import MenixGear from "../assets/logos/menix-gear.svg";
+import BlogPostList from "./BlogPostList.astro";
+import { loadPostInfos } from "../scripts/blogpost";
 
 const gearSize = 350;
+
+const posts = loadPostInfos();
 ---
 
 <main class="min-h-screen">
@@ -42,6 +46,17 @@ const gearSize = 350;
 				height={650}
 				loading={"eager"}
 			/>
+		</div>
+	</section>
+
+	<section class="mx-auto my-20 max-w-[1080px] px-10">
+		<div class="text-3xl dark:text-zinc-100 text-zinc-900 my-10">
+			<h3 class="mb-5 text-center sm:text-left">Recent blog posts</h3>
+			<hr class="dark:text-zinc-700 text-zinc-300" />
+		</div>
+
+		<div>
+			<BlogPostList posts={posts} maxItems={3} sort={"date"} />
 		</div>
 	</section>
 </main>

@@ -8,16 +8,19 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "prettier --write .",
-		"format:check": "prettier ."
+		"format:check": "prettier --check ."
 	},
 	"dependencies": {
+		"@astrojs/rss": "^4.0.14",
 		"@astrojs/starlight": "^0.36.2",
 		"@astrojs/starlight-tailwind": "^4.0.2",
 		"@tailwindcss/vite": "^4.1.17",
 		"astro": "^5.15.4",
+		"remove-markdown": "^0.6.2",
 		"tailwindcss": "^4.1.17"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.19",
 		"prettier": "3.6.2",
 		"prettier-plugin-astro": "0.14.1"
 	}

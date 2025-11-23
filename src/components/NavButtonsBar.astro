@@ -3,8 +3,8 @@ import NavLink from "./reusable/NavLink.astro";
 import GithubLogo from "../assets/icons/github-logo.svg";
 
 const links = [
-	{ text: "Downloads", href: "https://download.menix-os.org", newtab: true },
-	{ text: "Docs", href: "/docs" },
+	{ text: "Blog", href: "/blog" },
+	{ text: "Handbook", href: "/docs" },
 	{
 		text: "Code",
 		href: "https://github.com/menix-os/menix",
@@ -14,7 +14,7 @@ const links = [
 ];
 ---
 
-<ul class="flex gap-5 items-center">
+<ul class="flex gap-1 sm:gap-5 items-center">
 	{
 		links.map((link) => (
 			<li class="flex">

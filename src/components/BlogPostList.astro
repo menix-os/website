@@ -1,0 +1,39 @@
+---
+import { type BlogPostInfo } from "../scripts/blogpost";
+import BlogPostCard from "./BlogPostCard.astro";
+
+interface Props {
+	posts: BlogPostInfo[];
+	maxItems?: number;
+	sort?: "date" | "dateDesc" | "default";
+}
+
+let { maxItems, sort = "date", posts } = Astro.props;
+
+function sortByDate() {
+	posts.sort(function (a, b) {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
+}
+
+if (sort === "date") {
+	sortByDate();
+} else if (sort === "dateDesc") {
+	sortByDate();
+	posts.reverse();
+}
+
+if (maxItems) {
+	posts = posts.slice(0, maxItems);
+}
+---
+
+<ul class="grid sm:grid-cols-2 xl:grid-cols-3 gap-15">
+	{
+		posts.map((post) => (
+			<li class="flex">
+				<BlogPostCard post={post} />
+			</li>
+		))
+	}
+</ul>
