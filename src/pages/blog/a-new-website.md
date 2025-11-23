@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: "A New Website"
-date: 2025-07-01
+title: "A new Website"
+date: 2025-11-23
 lastEdited: null
 author: "PotatoMaaan"
 ---
 
-Menix now has a new website! It's made up entirely of static assets and doesn't ship any JavaScript to the client. It's currently hosted by GitHub Pages.
+Menix now has a new website! It's made up entirely of static assets and doesn't ship any javascript to the client. It's currently hosted by Github Pages.
 
 ## Tech Stack
 
@@ -15,8 +15,8 @@ Menix now has a new website! It's made up entirely of static assets and doesn't 
 - [Tailwind](https://tailwindcss.com/) for styling
 - [Astro's RSS plugin](https://www.npmjs.com/package/@astrojs/rss) to easily set up our [RSS feed](https://menix-os.org/rss.xml).
 
-As one would expect, this allows us to hit great Lighthouse scores :D
+As one would expect, this allows us to hit great lighthouse scores :D
 
 ![screenshot of good lighthouse scores](../../assets/images/lighthouse-scores.png)
 
-You can find the code [on our GitHub](https://github.com/menix-os/website).
+You can find the code [on our Github](https://github.com/menix-os/website).
