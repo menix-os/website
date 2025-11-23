@@ -1,0 +1,17 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout
+	meta={{
+		description: frontmatter.title,
+		title: frontmatter.title,
+		useDefaultSuffix: true,
+	}}
+>
+	<h2>{frontmatter.title}</h2>
+	<p>Written by {frontmatter.author}</p>
+	<slot />
+</Layout>

@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import type { BlogPostInfo } from "../scripts/blogpost";
+
+interface Props {
+	post: BlogPostInfo;
+}
+
+const { post } = Astro.props;
+---
+
+<a href={post.url}>
+	<div
+		class="bg-gray-200 dark:bg-zinc-900 p-4 rounded w-[300px] flex flex-col gap-2"
+	>
+		<div class="font-bold text-2xl mb-2">
+			{post.title}
+		</div>
+
+		<span class="text-zinc-300 mr-1 text-sm">
+			{post.author}, {post.date.toLocaleDateString()}
+		</span>
+		<div>
+			{
+				post.img && (
+					<img
+						src={post.img}
+						alt="blog post cover image"
+						loading="lazy"
+						class="aspect-square w-full object-cover rounded"
+					/>
+				)
+			}
+		</div>
+	</div>
+</a>

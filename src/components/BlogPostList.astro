@@ -1,0 +1,20 @@
+---
+import { postInfoFromRawPosts, type BlogPostInfo } from "../scripts/blogpost";
+import BlogPostCard from "./BlogPostCard.astro";
+
+const allPosts = Object.values(
+	import.meta.glob("../pages/blog/*.md", { eager: true }),
+);
+
+const allPostInfos = postInfoFromRawPosts(allPosts);
+---
+
+<ul class="flex">
+	{
+		allPostInfos.map((post) => (
+			<li>
+				<BlogPostCard post={post} />
+			</li>
+		))
+	}
+</ul>

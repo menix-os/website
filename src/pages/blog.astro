@@ -1,7 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BlogPostList from "../components/BlogPostList.astro";
 ---
 
-<Layout meta={{ default: true }}>
-	<h1>Blog!</h1>
+<Layout
+	meta={{ description: "Blogs posts", title: "Blog", useDefaultSuffix: true }}
+>
+	<div class="w-[1080px] mx-auto mt-10">
+		<main>
+			<h2 class="text-3xl">All Menix blog posts</h2>
+
+			<BlogPostList />
+		</main>
+	</div>
 </Layout>
