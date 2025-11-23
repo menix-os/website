@@ -7,18 +7,22 @@ interface Props {
 
 const { post } = Astro.props;
 
-const contentPreview = post.rawContent.substring(0, 150) + "...";
+const PREVIEW_LEN = 150;
+
+let contentPreview = post.markdownRemovedContent;
+
+if (post.rawContent.length > PREVIEW_LEN) {
+	contentPreview = contentPreview.substring(0, 150) + "...";
+}
 ---
 
 <a href={post.url}>
-	<div
-		class="bg-gray-200 dark:bg-zinc-900 p-4 rounded flex flex-col gap-2 shadow-md hover:dark:text-red-500"
-	>
+	<div class="rounded flex flex-col gap-2 hover:text-red-500">
 		<div class="font-bold text-2xl">
 			{post.title}
 		</div>
 
-		<span class="dark:text-zinc-300 text-zinc-600 mr-1 text-sm">
+		<span class="dark:text-zinc-300 text-zinc-600 mr-1 text-sm italic">
 			{post.author}, {post.date.toLocaleDateString("de-EN")}
 		</span>
 		<div class="dark:text-zinc-200 text-zinc-700 mt-5">

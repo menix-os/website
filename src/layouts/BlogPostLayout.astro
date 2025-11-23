@@ -1,7 +1,15 @@
 ---
 import Layout from "./Layout.astro";
+import BlogContentFormatting from "../components/BlogContentFormatting.astro";
 
 const { frontmatter } = Astro.props;
+
+const date = new Date(frontmatter.date).toLocaleDateString("de-EN");
+
+const rawLastEdited = frontmatter.lastEdited;
+const lastEdited = rawLastEdited
+	? new Date(rawLastEdited).toLocaleDateString("de-EN")
+	: null;
 ---
 
 <Layout
@@ -11,7 +19,25 @@ const { frontmatter } = Astro.props;
 		useDefaultSuffix: true,
 	}}
 >
-	<h2>{frontmatter.title}</h2>
-	<p>Written by {frontmatter.author}</p>
-	<slot />
+	<main class="lg:w-2xl max-w-2xl mx-auto mt-20 px-2">
+		<div>
+			<h2 class="text-5xl font-bold">{frontmatter.title}</h2>
+			<div
+				class="flex flex-col gap-1 mt-6 text-zinc-700 dark:text-zinc-400"
+			>
+				<p class="">
+					Written by {frontmatter.author}, {date}
+				</p>
+				{lastEdited && <p class="">Last updated: {lastEdited}</p>}
+			</div>
+		</div>
+
+		<div class="mt-10 mb-20">
+			<BlogContentFormatting>
+				<slot />
+			</BlogContentFormatting>
+		</div>
+	</main>
 </Layout>
+
+<style></style>

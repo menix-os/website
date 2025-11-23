@@ -1,4 +1,24 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* incredibly weird workaround needed because the 
+large code blocks were not targetet by 
+prose-code, prose-pre or prose-figure.
+This is gpt slop so there is proably a better way to figure this out
+*/
+@layer components {
+	/* Light theme default styling for code blocks */
+	.prose pre {
+		background-color: theme("colors.zinc.100") !important;
+	}
+
+	/* Dark theme override */
+	@media (prefers-color-scheme: dark) {
+		.prose pre {
+			background-color: theme("colors.zinc.900") !important;
+		}
+	}
+}
 
 @font-face {
 	font-family: rubik-glitch-regular;
@@ -50,7 +70,7 @@
 
 @theme {
 	--font-glitch: rubik-glitch-regular, sans-serif;
-	--font-rubik: rubik, monospace;
+	--font-rubik: rubik, sans-serif, monospace;
 	--font-scp: source-code-pro, sans-serif;
 
 	/* base color from menix logo #FF1A00 */

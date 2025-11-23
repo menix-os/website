@@ -1,9 +1,6 @@
 import rss, { pagesGlobToRssItems } from "@astrojs/rss";
-import { loadRawPosts } from "../scripts/blogpost";
 
-const posts = loadRawPosts();
-
-export async function GET(context) {
+export async function GET(context: any) {
 	return rss({
 		title: "Menix Blog",
 		description: "Blog posts from the Menix project",

@@ -1,3 +1,5 @@
+import { removeMarkdown } from "./markdown-remoal";
+
 export interface BlogPostInfo {
 	title: string;
 	date: Date;
@@ -5,11 +7,17 @@ export interface BlogPostInfo {
 	url: string;
 	img?: string;
 	rawContent: string;
+	markdownRemovedContent: string;
+	lastEdited: Date | null;
 }
 
 export function postInfoFromRawPosts(raw: any[]): BlogPostInfo[] {
 	return raw.map((post) => {
 		const rawContent: string = post.rawContent().trim();
+
+		const markdownRemovedContent = removeMarkdown(rawContent);
+
+		const lastEdited: string | null = post.frontmatter.lastEdited;
 
 		return {
 			author: post.frontmatter.author,
@@ -18,6 +26,8 @@ export function postInfoFromRawPosts(raw: any[]): BlogPostInfo[] {
 			img: post.frontmatter.img,
 			url: post.url,
 			rawContent,
+			markdownRemovedContent,
+			lastEdited: lastEdited ? new Date(lastEdited) : null,
 		};
 	});
 }

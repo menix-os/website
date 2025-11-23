@@ -9,12 +9,12 @@ const posts = loadPostInfos();
 <Layout
 	meta={{ description: "Blogs posts", title: "Blog", useDefaultSuffix: true }}
 >
-	<div class="max-w-[1080px] mx-auto mt-10 px-5">
+	<div class="max-w-[1080px] mx-auto mt-10 px-5 md:px-20">
 		<main class="mb-20">
 			{
 				posts.length > 0 && (
 					<>
-						<h2 class="text-4xl text-center sm:text-left mb-10">
+						<h2 class="text-3xl text-center sm:text-left mb-5">
 							Menix blog posts ({posts.length})
 						</h2>
 
