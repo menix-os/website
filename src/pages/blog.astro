@@ -11,20 +11,25 @@ const posts = loadPostInfos();
 >
 	<div class="max-w-[1080px] mx-auto mt-10 px-5">
 		<main class="mb-20">
-			{posts.length > 0 && 
-			<h2 class="text-4xl text-center sm:text-left mb-10">
-				Menix blog posts ({posts.length})
-			</h2>
+			{
+				posts.length > 0 && (
+					<>
+						<h2 class="text-4xl text-center sm:text-left mb-10">
+							Menix blog posts ({posts.length})
+						</h2>
 
-			<hr class="mb-10 dark:text-zinc-600 text-zinc-300" />
+						<hr class="mb-10 dark:text-zinc-600 text-zinc-300" />
 
-			<BlogPostList posts={posts} />
+						<BlogPostList posts={posts} />
+					</>
+				)
 			}
 
-			{posts.length < 1 && 
-				<h2 class="text-2xl">There are no posts yet :(</h2>
+			{
+				posts.length < 1 && (
+					<h2 class="text-2xl">There are no posts yet :(</h2>
+				)
 			}
-
 		</main>
 	</div>
 </Layout>
